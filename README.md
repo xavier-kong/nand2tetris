@@ -1,10 +1,27 @@
-- lectures: 
+- lectures:
 	- part 1
 		- https://www.youtube.com/playlist?list=PLrDd_kMiAuNmSb-CKWQqq9oBFN_KNMTaI
-		- current at Unit 1.7
+		- current at Unit 2.1
 	- part 2
 		- https://www.youtube.com/playlist?list=PLrDd_kMiAuNmllp9vuPqCuttC1XL9VyVh
 
 - projects:
+	- chip api: https://drive.google.com/file/d/1IsDnH0t7q_Im491LQ7_5_ajV0CokRbwR/view
 	- https://www.nand2tetris.org/course
-
+		- current on project 1
+			- [x] Nand (given)
+			- [x] Not
+			- [x] And
+			- [x] Or
+			- [x] Xor
+			- [] Mux
+			- [] DMux
+			- [] Not16
+			- [] And16
+			- [] Or16
+			- [] Mux16
+			- [] Or8Way
+			- [] Mux4Way16
+			- [] Mux8Way16
+			- [] DMux4Way
+			- [] DMux8Way
