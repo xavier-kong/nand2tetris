@@ -14,9 +14,9 @@
 			- [x] And
 			- [x] Or
 			- [x] Xor
-			- [] Mux
-			- [] DMux
-			- [] Not16
+			- [x] Mux
+			- [x] DMux
+			- [x] Not16
 			- [] And16
 			- [] Or16
 			- [] Mux16
