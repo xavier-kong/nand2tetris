@@ -17,10 +17,10 @@
 			- [x] Mux
 			- [x] DMux
 			- [x] Not16
-			- [] And16
-			- [] Or16
-			- [] Mux16
-			- [] Or8Way
+			- [x] And16
+			- [x] Or16
+			- [x] Mux16
+			- [x] Or8Way
 			- [] Mux4Way16
 			- [] Mux8Way16
 			- [] DMux4Way
