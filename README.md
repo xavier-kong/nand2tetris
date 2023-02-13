@@ -1,7 +1,7 @@
 - lectures:
 	- part 1
 		- https://www.youtube.com/playlist?list=PLrDd_kMiAuNmSb-CKWQqq9oBFN_KNMTaI
-		- current at Unit 2.1
+		- current at Unit 3.1
 	- part 2
 		- https://www.youtube.com/playlist?list=PLrDd_kMiAuNmllp9vuPqCuttC1XL9VyVh
 
@@ -9,3 +9,10 @@
 	- chip api: https://drive.google.com/file/d/1IsDnH0t7q_Im491LQ7_5_ajV0CokRbwR/view
 	- https://www.nand2tetris.org/course
 		- completed project1
+		- currently at project2
+			- Build the following chips:
+			- HalfAdder
+			- FullAdder
+			- Add16
+			- Inc16
+			- ALU
