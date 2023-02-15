@@ -8,11 +8,6 @@
 - projects:
 	- chip api: https://drive.google.com/file/d/1IsDnH0t7q_Im491LQ7_5_ajV0CokRbwR/view
 	- https://www.nand2tetris.org/course
-		- completed project1
-		- currently at project2
-			- Build the following chips:
-			- HalfAdder
-			- FullAdder
-			- Add16
-			- Inc16
-			- ALU
+		- [x] project 1
+		- [x] project2
+		- [] project 2
