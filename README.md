@@ -1,7 +1,7 @@
 - lectures:
 	- part 1
 		- https://www.youtube.com/playlist?list=PLrDd_kMiAuNmSb-CKWQqq9oBFN_KNMTaI
-		- current at Unit 3.3
+		- current at Unit 4.1
 	- part 2
 		- https://www.youtube.com/playlist?list=PLrDd_kMiAuNmllp9vuPqCuttC1XL9VyVh
 
@@ -11,3 +11,12 @@
 		- [x] project 1
 		- [x] project2
 		- [] project 3
+			- [x] DFF (given)
+			- [x] Bit
+			- [x] Register
+			- [] RAM8
+			- [] RAM64
+			- [] RAM512
+			- [] RAM4K
+			- [] RAM16K
+			- [] PC
