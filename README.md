@@ -1,7 +1,7 @@
 - lectures:
 	- part 1
 		- https://www.youtube.com/playlist?list=PLrDd_kMiAuNmSb-CKWQqq9oBFN_KNMTaI
-		- current at Unit 5.4
+		- current at Unit 6.1
 	- part 2
 		- https://www.youtube.com/playlist?list=PLrDd_kMiAuNmllp9vuPqCuttC1XL9VyVh
 
@@ -13,4 +13,8 @@
 		- [x] project 2
 		- [x] project 3
 		- [x] project 4
+		- [ ] project 5 
+			- Memory
+			- CPU
+			- Computer
 		
