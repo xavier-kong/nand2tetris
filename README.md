@@ -13,8 +13,5 @@
 		- [x] project 2
 		- [x] project 3
 		- [x] project 4
-		- [ ] project 5 
-			- Memory
-			- CPU
-			- Computer
+		- [x] project 5 
 		
