@@ -1,7 +1,7 @@
 - lectures:
 	- part 1
 		- https://www.youtube.com/playlist?list=PLrDd_kMiAuNmSb-CKWQqq9oBFN_KNMTaI
-		- current at Unit 6.1
+		- completed all lectures
 	- part 2
 		- https://www.youtube.com/playlist?list=PLrDd_kMiAuNmllp9vuPqCuttC1XL9VyVh
 
@@ -14,4 +14,5 @@
 		- [x] project 3
 		- [x] project 4
 		- [x] project 5 
+		- [ ] project
 		
