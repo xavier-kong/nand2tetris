@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"strconv"
 	"strings"
 )
 
@@ -26,12 +27,39 @@ func readFile(filePath string) []string {
 	return fileLines
 }
 
+func handleComments(line string) string {
+	if strings.HasPrefix(line, "//") { // full line comments
+		return ""
+	}
+
+	parts := strings.Split(line, "//")
+	return parts[0]
+}
+
+func handleAddressingInstruction(line string) string {
+	addressString := strings.TrimPrefix(line, "@")
+	addressInt, err := strconv.Atoi(addressString)
+
+	if err != nil {
+		panic(err)
+	}
+
+	return "0" + fmt.Sprintf("%015b", addressInt)
+}
+
 func handleLine(line string) string {
+	line = handleComments(line)
 	if len(line) == 0 {
 		return ""
 	}
 
-	return ""
+	if strings.HasPrefix(line, "@") {
+		line = handleAddressingInstruction(line)
+	} else {
+		line = handleComputeInstruction(line)
+	}
+
+	return line
 }
 
 func main() {
@@ -43,13 +71,13 @@ func main() {
 	filePath := os.Args[1]
 	fileLines := readFile(filePath)
 
-	res := []string
+	var res []string
 
 	for _, line := range fileLines {
 		resLine := handleLine(line)
 
 		if resLine != "" {
-			append(res, resLine)
+			res = append(res, resLine)
 		}
 	}
 

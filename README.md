@@ -18,10 +18,10 @@
 			- [x] load file from cmd line
 			- [] can assemble without symbols
 				- [x] can ignore whitespace
-				- [] can ignore comments
-					- [] full line comments
-					- [] inline comments
-				- [] check if current command is A, C or Label
+				- [x] can ignore comments
+				- [] convert to binary
+					- [x] convert A instructions (e.g @2)
+					- [] convert C instructions (e.g. dest = comp:jump)
 				- [] can create output
 			- [] translate mnemonic to code
 			- [] can assemble with symbols
