@@ -13,6 +13,19 @@
 		- [x] project 2
 		- [x] project 3
 		- [x] project 4
-		- [x] project 5 
-		- [ ] project
-		
+		- [x] project 5
+		- [] project 6
+			- [x] load file from cmd line
+			- [] can assemble without symbols
+				- [x] can ignore whitespace
+				- [] can ignore comments
+					- [] full line comments
+					- [] inline comments
+				- [] check if current command is A, C or Label
+				- [] can create output
+			- [] translate mnemonic to code
+			- [] can assemble with symbols
+				- [] create symbol table
+				- [] add basic symbols to table
+				- [] user added symbols to table
+				- [] first pass symbols second pass translate
