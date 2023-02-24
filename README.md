@@ -19,11 +19,10 @@
 			- [] can assemble without symbols
 				- [x] can ignore whitespace
 				- [x] can ignore comments
-				- [] convert to binary
+				- [x] convert to binary
 					- [x] convert A instructions (e.g @2)
-					- [] convert C instructions (e.g. dest = comp:jump)
-				- [] can create output
-			- [] translate mnemonic to code
+					- [x] convert C instructions (e.g. dest = comp:jump)
+				- [x] can create output
 			- [] can assemble with symbols
 				- [] create symbol table
 				- [] add basic symbols to table

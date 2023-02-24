@@ -47,6 +47,137 @@ func handleAddressingInstruction(line string) string {
 	return "0" + fmt.Sprintf("%015b", addressInt)
 }
 
+func findDest(destStr string) string {
+	switch destStr {
+	case "M":
+		return "001"
+	case "D":
+		return "010"
+	case "MD":
+		return "011"
+	case "A":
+		return "100"
+	case "AM":
+		return "101"
+	case "AD":
+		return "110"
+	case "AMD":
+		return "111"
+	default:
+		return ""
+	}
+}
+
+func findJump(jumpStr string) string {
+	switch jumpStr {
+	case "JGT":
+		return "001"
+	case "JEQ":
+		return "010"
+	case "JGE":
+		return "011"
+	case "JLT":
+		return "100"
+	case "JNE":
+		return "101"
+	case "JLE":
+		return "110"
+	case "JMP":
+		return "111"
+	default:
+		return ""
+	}
+}
+
+func findComp(compStr string) (comp string, a string) {
+	switch compStr {
+	case "0":
+		return "101010", "0"
+	case "1":
+		return "111111", "0"
+	case "-1":
+		return "111010", "0"
+	case "D":
+		return "001100", "0"
+	case "A":
+		return "110000", "0"
+	case "M":
+		return "110000", "1"
+	case "!D":
+		return "001101", "0"
+	case "!A":
+		return "110001", "0"
+	case "!M":
+		return "110001", "1"
+	case "-D":
+		return "001111", "0"
+	case "-A":
+		return "110011", "0"
+	case "-M":
+		return "110011", "1"
+	case "D+1":
+		return "011111", "0"
+	case "A+1":
+		return "110111", "0"
+	case "M+1":
+		return "110111", "1"
+	case "D-1":
+		return "001110", "0"
+	case "A-1":
+		return "110010", "0"
+	case "M-1":
+		return "110010", "1"
+	case "D+A":
+		return "000010", "0"
+	case "D+M":
+		return "000010", "1"
+	case "D-A":
+		return "010011", "0"
+	case "D-M":
+		return "010011", "1"
+	case "A-D":
+		return "000111", "0"
+	case "M-D":
+		return "000111", "1"
+	case "D&A":
+		return "000000", "0"
+	case "D&M":
+		return "000000", "1"
+	case "D|A":
+		return "010101", "0"
+	case "D|M":
+		return "010101", "1"
+	default:
+		return "", ""
+	}
+}
+
+func handleComputeInstruction(line string) string {
+	hasEquals := strings.Contains(line, "=")
+	hasCol := strings.Contains(line, ";")
+
+	dest, comp, a, jump := "000", "", "", "000"
+
+	if hasEquals {
+		parts := strings.Split(line, "=")
+		if hasCol { // dest=comp;jump
+			compJump := strings.Split(parts[1], ";")
+			parts = append(parts[:1], compJump...)
+			dest, jump = findDest(parts[0]), findJump(parts[2])
+			comp, a = findComp(parts[1])
+		} else { // dest = comp
+			dest = findDest(parts[0])
+			comp, a = findComp(parts[1])
+		}
+	} else if hasCol { // comp; jump
+		parts := strings.Split(line, ";")
+		comp, a = findComp(parts[0])
+		jump = findJump(parts[1])
+	}
+
+	return "111" + a + comp + dest + jump
+}
+
 func handleLine(line string) string {
 	line = handleComments(line)
 	if len(line) == 0 {
@@ -60,6 +191,22 @@ func handleLine(line string) string {
 	}
 
 	return line
+}
+
+func createOutput(res []string, path string) {
+	filePath := strings.Replace(path, ".asm", ".hack", -1)
+	file, err := os.Create(filePath)
+	if err != nil {
+		panic(err)
+	}
+	defer file.Close()
+
+	w := bufio.NewWriter(file)
+	for _, line := range res {
+		fmt.Fprintln(w, line)
+	}
+
+	w.Flush()
 }
 
 func main() {
@@ -80,5 +227,7 @@ func main() {
 			res = append(res, resLine)
 		}
 	}
+
+	createOutput(res, filePath)
 
 }
