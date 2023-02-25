@@ -14,17 +14,4 @@
 		- [x] project 3
 		- [x] project 4
 		- [x] project 5
-		- [] project 6
-			- [x] load file from cmd line
-			- [] can assemble without symbols
-				- [x] can ignore whitespace
-				- [x] can ignore comments
-				- [x] convert to binary
-					- [x] convert A instructions (e.g @2)
-					- [x] convert C instructions (e.g. dest = comp:jump)
-				- [x] can create output
-			- [] can assemble with symbols
-				- [] create symbol table
-				- [] add basic symbols to table
-				- [] user added symbols to table
-				- [] first pass symbols second pass translate
+		- [x] project 6
